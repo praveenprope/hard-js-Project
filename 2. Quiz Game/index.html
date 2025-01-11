@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>🎓 Quiz App</h1>
+    <p>Test your knowledge by choosing a category below!</p>
+  </header>
+
+  <div id="categories" class="categories">
+    <div class="category-box" onclick="loadCategory('general')">
+      <span class="emoji">🌍</span>
+      <span class="label">General Knowledge</span>
+    </div>
+    <div class="category-box" onclick="loadCategory('science')">
+      <span class="emoji">🔬</span>
+      <span class="label">Science</span>
+    </div>
+    <div class="category-box" onclick="loadCategory('sports')">
+      <span class="emoji">⚽</span>
+      <span class="label">Sports</span>
+    </div>
+    <div class="category-box" onclick="loadCategory('history')">
+      <span class="emoji">📜</span>
+      <span class="label">History</span>
+    </div>
+  </div>
+
+  <div id="quiz" class="hidden">
+    <div class="question" id="question"></div>
+    <ul class="options" id="options"></ul>
+    <div class="score" id="score"></div>
+    <div class="restart" id="restart">
+      <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
