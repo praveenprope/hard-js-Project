@@ -6,8 +6,8 @@
   }
   
   body {
-    background: #222;
-    font-family: Arial, sans-serif;
+    background: #000;
+    font-family: 'Press Start 2P', cursive;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -20,29 +20,58 @@
     position: relative;
     width: 90%;
     max-width: 1000px;
-    background: #111;
+    background: linear-gradient(45deg, rgba(255, 0, 255, 0.7), rgba(0, 255, 255, 0.7));
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     overflow: hidden;
+    padding-top: 20px; /* Add some space at the top for the button */
+    border: 2px solid #ff00ff;
   }
   
   .video {
     width: 100%;
     height: auto;
     display: block;
+    border-bottom: 2px solid #ff00ff;
+  }
+  
+  .video-loader {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 100%;
+  }
+  
+  .video-loader label {
+    background: #ff00ff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+    transition: all 0.3s ease;
+  }
+  
+  .video-loader label:hover {
+    background: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
   }
   
   .controls {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 15px;
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 10px;
     right: 10px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
     align-items: center;
+    border: 2px solid #ff00ff;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
   }
   
   .control-btns {
@@ -53,20 +82,26 @@
   .btn {
     background: none;
     border: none;
-    color: #fff;
-    font-size: 18px;
-    margin-right: 10px;
+    color: #ff00ff;
+    font-size: 24px;
+    margin-right: 15px;
+    padding: 12px;
     cursor: pointer;
+    border-radius: 6px;
     transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
   }
   
   .btn:hover {
-    color: #f0c040;
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
   }
   
   .slider {
     flex: 1;
     margin: 0 10px;
+    width: 100%;
   }
   
   .slider::-webkit-slider-runnable-track {
@@ -75,63 +110,82 @@
   }
   
   .slider::-webkit-slider-thumb {
-    width: 10px;
-    height: 10px;
-    background: #f0c040;
+    width: 16px;
+    height: 16px;
+    background: #ff00ff;
     border-radius: 50%;
   }
   
   .time {
-    font-size: 14px;
+    font-size: 18px;
+    color: #ff00ff;
   }
   
   .volume-fullscreen {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
   
-  .video-loader {
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    text-align: center;
+  /* Neon Border Animation */
+  @keyframes neon-glow {
+    0% {
+      box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
+    50% {
+      box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+    }
+    100% {
+      box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
   }
   
-  .video-loader label {
-    background: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .video-loader label:hover {
-    background: #f0c040;
+  .video-container {
+    animation: neon-glow 1.5s infinite alternate;
   }
   
   /* Responsive Design */
   @media (max-width: 768px) {
     .controls {
       flex-direction: column;
+      align-items: stretch;
+      padding: 10px;
+    }
+  
+    .control-btns {
+      flex-direction: column;
       align-items: flex-start;
+      margin-bottom: 15px;
+    }
+  
+    .btn {
+      font-size: 20px;
+      margin-bottom: 10px;
+      padding: 10px;
     }
   
     .slider {
       width: 100%;
-      margin: 5px 0;
-    }
-  
-    .time {
-      font-size: 12px;
-      margin-top: 5px;
+      margin-bottom: 10px;
     }
   
     .volume-fullscreen {
-      margin-top: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .time {
+      font-size: 14px;
     }
   }
   
   @media (max-width: 480px) {
     .btn {
+      font-size: 18px;
+    }
+  
+    .video-loader label {
       font-size: 14px;
     }
   }
