@@ -1,0 +1,138 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #222;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+  }
+  
+  .video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    align-items: center;
+  }
+  
+  .control-btns {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    color: #f0c040;
+  }
+  
+  .slider {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .slider::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #333;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+    background: #f0c040;
+    border-radius: 50%;
+  }
+  
+  .time {
+    font-size: 14px;
+  }
+  
+  .volume-fullscreen {
+    display: flex;
+    align-items: center;
+  }
+  
+  .video-loader {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+  
+  .video-loader label {
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .video-loader label:hover {
+    background: #f0c040;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .controls {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .slider {
+      width: 100%;
+      margin: 5px 0;
+    }
+  
+    .time {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  
+    .volume-fullscreen {
+      margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .btn {
+      font-size: 14px;
+    }
+  }
+  
