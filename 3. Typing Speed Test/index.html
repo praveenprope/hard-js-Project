@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultra Pro Typing Speed Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Ultra Pro Typing Speed Test ⚡</h1>
+    <p class="instructions">Choose your test duration and start typing to measure your speed and accuracy!</p>
+    
+    <!-- Test Time Selection -->
+    <div class="options">
+      <label for="time-select">Select Test Time:</label>
+      <select id="time-select">
+        <option value="30">30 seconds</option>
+        <option value="60" selected>60 seconds</option>
+        <option value="120">120 seconds</option>
+      </select>
+      <button id="start-btn">Start Test</button>
+    </div>
+
+    <!-- Test Area -->
+    <div class="test-box">
+      <p id="text-to-type">The quick brown fox jumps over the lazy dog. Typing tests are fun!</p>
+      <textarea id="typing-area" placeholder="Start typing here..." disabled></textarea>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results">
+      <p id="timer">⏳ Time Left: 0s</p>
+      <p id="accuracy">✅ Accuracy: 0%</p>
+      <p id="wpm">⚡ WPM: 0</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
